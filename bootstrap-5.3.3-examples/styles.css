@@ -67,6 +67,7 @@ button:active {
     margin-bottom: 20px;
 }
 
+
 @media (max-width: 768px) {
     #map {
         width: 95%;
