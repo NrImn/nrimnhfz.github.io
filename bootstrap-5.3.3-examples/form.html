@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Input Form with Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px 30px;
+            max-width: 400px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+
+        .form-group .location-btn {
+            background-color: #28a745;
+            margin-top: 10px;
+        }
+
+        .form-group .location-btn:hover {
+            background-color: #1e7e34;
+        }
+
+        #map {
+            height: 300px;
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Enhanced Input Form</h2>
+        <form id="inputForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="latitude">Latitude:</label>
+                <input type="text" id="latitude" name="latitude" placeholder="Latitude" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="longitude">Longitude:</label>
+                <input type="text" id="longitude" name="longitude" placeholder="Longitude" readonly>
+            </div>
+
+            <div id="map"></div>
+
+            <div class="form-group">
+                <button type="button" class="location-btn" onclick="getLocation()">Get Location</button>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        let map;
+        let marker;
+
+        function initMap(lat, lng) {
+            if (!map) {
+                map = L.map('map').setView([lat, lng], 15);
+
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+
+                marker = L.marker([lat, lng]).addTo(map);
+            } else {
+                map.setView([lat, lng], 15);
+                marker.setLatLng([lat, lng]);
+            }
+        }
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    const lat = position.coords.latitude;
+                    const lng = position.coords.longitude;
+
+                    document.getElementById('latitude').value = lat;
+                    document.getElementById('longitude').value = lng;
+
+                    initMap(lat, lng);
+                }, (error) => {
+                    alert('Unable to retrieve location. Please try again.');
+                });
+            } else {
+                alert('Geolocation is not supported by this browser.');
+            }
+        }
+
+        const form = document.getElementById('inputForm');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Form submitted!');
+        });
+    </script>
+</body>
+
+</html>
