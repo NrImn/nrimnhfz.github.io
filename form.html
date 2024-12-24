@@ -135,7 +135,7 @@
 
 <body>
     <div class="form-container">
-        <h2>Enhanced Input Form</h2>
+        <h2>Input Form</h2>
         <form id="inputForm">
             <div class="form-group">
                 <label for="name">Name:</label>
@@ -211,6 +211,15 @@
             e.preventDefault();
             alert('Form submitted!');
         });
+
+        function showDeviceMessage() {
+        const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+        if (!isMobile) {
+            alert("Please use your mobile device for more accurate location.");
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', showDeviceMessage);
     </script>
 </body>
 
