@@ -15,23 +15,25 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
         }
 
         .form-container {
             background: #ffffff;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px 30px;
-            max-width: 400px;
-            width: 100%;
+            padding: 20px;
+            max-width: 90%;
+            width: 400px;
             margin-top: 20px;
+            box-sizing: border-box;
         }
 
         .form-container h2 {
             text-align: center;
             margin-bottom: 20px;
             color: #333;
+            font-size: 1.5em;
         }
 
         .form-group {
@@ -43,6 +45,7 @@
             margin-bottom: 5px;
             color: #555;
             font-weight: bold;
+            font-size: 0.9em;
         }
 
         .form-group input {
@@ -50,7 +53,8 @@
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            font-size: 16px;
+            font-size: 1em;
+            box-sizing: border-box;
         }
 
         .form-group button {
@@ -60,8 +64,9 @@
             color: white;
             border: none;
             border-radius: 5px;
-            font-size: 16px;
+            font-size: 1em;
             cursor: pointer;
+            box-sizing: border-box;
         }
 
         .form-group button:hover {
@@ -83,6 +88,46 @@
             margin-top: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .form-container {
+                padding: 15px;
+            }
+
+            .form-container h2 {
+                font-size: 1.2em;
+            }
+
+            .form-group input, 
+            .form-group button {
+                font-size: 0.9em;
+                padding: 8px;
+            }
+
+            #map {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 10px;
+            }
+
+            .form-container h2 {
+                font-size: 1em;
+            }
+
+            .form-group input, 
+            .form-group button {
+                font-size: 0.8em;
+                padding: 6px;
+            }
+
+            #map {
+                height: 150px;
+            }
         }
     </style>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
