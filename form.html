@@ -99,7 +99,7 @@
                 font-size: 1.2em;
             }
 
-            .form-group input, 
+            .form-group input,
             .form-group button {
                 font-size: 0.9em;
                 padding: 8px;
@@ -119,7 +119,7 @@
                 font-size: 1em;
             }
 
-            .form-group input, 
+            .form-group input,
             .form-group button {
                 font-size: 0.8em;
                 padding: 6px;
@@ -189,6 +189,14 @@
         }
 
         function getLocation() {
+            // Check if the user is on a mobile device
+            const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
+            if (!isMobile) {
+                alert("Please use your mobile device for more accurate location.");
+            }
+
+            // Proceed to get the location
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition((position) => {
                     const lat = position.coords.latitude;
@@ -206,20 +214,12 @@
             }
         }
 
+
         const form = document.getElementById('inputForm');
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             alert('Form submitted!');
         });
-
-        function showDeviceMessage() {
-        const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-        if (!isMobile) {
-            alert("Please use your mobile device for more accurate location.");
-        }
-    }
-
-    document.addEventListener('DOMContentLoaded', showDeviceMessage);
     </script>
 </body>
 
