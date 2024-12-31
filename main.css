@@ -1,0 +1,582 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    background-color: rgb(227, 213, 200);
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+header {
+    height: 70px;
+    width: 100vw;
+    padding: 0 30px;
+    background-color: white;
+    position: fixed;
+    z-index: 100;
+    box-shadow: 1px 1px 15px #f5dec7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoName {
+    font-family: 'Hanken Grostesk', sans-serif;
+    font-size: 27px;
+    font-weight: 900;
+    color: black;
+}
+
+.icn {
+    display: flex;
+    align-items: center;
+}
+
+.menuicn {
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.logo,
+.search,
+.searchBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    gap: 20px;
+}
+
+.search {
+    gap: 20px;
+}
+
+.search i {
+    font-size: 18px;
+}
+
+.search select,
+.search input {
+    width: 180px;
+    height: 42px;
+    border-radius: 15px;
+    background-color: whitesmoke;
+    padding: 0 20px;
+    font-size: 15px;
+    outline: none;
+    border: none;
+}
+
+.dropdownSearch,
+.startDateSearch,
+.endDateSearch {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    gap: 6px;
+}
+
+.dropdownSearch label,
+.startDateSearch label,
+.endDateSearch label {
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.searchBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.searchBtn button {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 115px;
+    font-size: 15px;
+    padding: 5px 18px;
+    border-radius: 15px;
+    border-style: none;
+    color: white;
+    background-color: rgb(248, 139, 30);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.searchBtn button:hover {
+    background-color: rgb(251, 190, 92);
+    transform: scale(1.05);
+    transition: all 0.5s ease;
+}
+
+.searchBtn button:active {
+    background-color: rgb(251, 190, 92);
+    transform: scale(1);
+    transition: all 0.01s ease;
+}
+
+.main-container {
+    display: flex;
+    width: 100vw;
+    position: relative;
+    top: 70px;
+    z-index: 1;
+}
+
+.nav {
+    min-height: 91vh;
+    width: 250px;
+    background-color: white;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    box-shadow: 1px 1px 10px rgb(251, 190, 92);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 30px 0 20px 10px;
+}
+
+.navcontainer {
+    height: calc(100vh - 70px);
+    width: 250px;
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+.navclose {
+    width: 80px;
+}
+
+.navcontainer::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-option {
+    display: flex;
+    align-items: center;
+    width: 250px;
+    height: 60px;
+    padding: 0 30px 0 20px;
+    gap: 20px;
+    transition: all 0.1s ease-in-out;
+}
+
+.nav-option:hover {
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+.nav i {
+    font-size: 33px;
+}
+
+.nav-upper-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.option1 {
+    background-color: rgb(248, 139, 30);
+    color: white;
+    cursor: pointer;
+}
+
+.option1:hover {
+    background-color: rgb(250, 164, 78);
+}
+
+.main {
+    height: calc(100vh - 70px);
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0 30px 30px 30px;
+}
+
+.main::-webkit-scrollbar {
+    width: 5px;
+}
+
+.main::-webkit-scrollbar-track {
+    background-color: #9e9e9eb2;
+}
+
+.box-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.box {
+    height: 130px;
+    width: 230px;
+    border-radius: 20px;
+    background-color: rgb(248, 139, 30);
+    box-shadow: 3px 3px 10px rgb(255, 182, 110);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.box:hover {
+    transform: scale(1.08);
+}
+
+.box i {
+    color: white;
+    font-size: 50px;
+}
+
+.box .text {
+    color: white;
+}
+
+.report-container {
+    min-height: 300px;
+    max-height: 80vh;
+    max-width: 1200px;
+    margin: 33px auto 0px auto;
+    background-color: #ffffff;
+    border-radius: 30px;
+    box-shadow: 3px 3px 10px rgb(188, 188, 188);
+    padding: 0 20px 20px 20px;
+    overflow-y: scroll;
+}
+
+.report-header {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px 20px 10px 20px;
+    border-bottom: 2px solid rgb(255, 195, 135);
+}
+
+.temperature-Reading {
+    font-size: 30px;
+    font-weight: 700;
+    color: rgb(248, 151, 54);
+}
+
+.report-body {
+    max-width: 1160px;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+.report-table table{
+    table-layout: auto;
+    text-align: center;
+    width: 1120px;
+    border: 1px solid #dededf;
+    border-collapse: collapse;
+    border-spacing: 1px;
+}
+
+.report-table th{
+    height: 35px;
+    border: 2px solid #dededf;
+    background-color: rgb(229, 226, 226);
+}
+
+.report-table td{
+    font-size: 15px;
+    font-weight: 500;
+    height: 40px;
+    border: 1px solid #dededf;
+}
+
+.report-table td.green{
+    background-color: rgb(35, 223, 63);
+    color: white;
+}
+
+.report-table td.red{
+    background-color: rgb(247, 86, 86);
+    color: white;
+}
+
+.report-table td.blue{
+    background-color: rgb(49, 153, 238);
+    color: white;
+}
+
+.report-container::-webkit-scrollbar {
+    display: none;
+}
+
+.report-container .dashboard-view-report{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.report-container .dashboard-view-report button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 24px;
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+    padding: 5px 18px;
+    border-radius: 15px;
+    border-style: none;
+    background-color: rgb(248, 139, 30);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.dashboard-view-report button:hover{
+    background-color: rgb(248, 168, 88);
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.1);
+}
+
+.dashboard-view-report button:active{
+    background-color: rgb(251, 162, 72);
+    transition: transform 0.1s ease-in-out;
+    transform: scale(1.05);
+}
+
+
+
+.report-topic-heading,
+.item1 {
+    width: 1120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.t-op {
+    font-size: 18px;
+    letter-spacing: 0px;
+}
+
+.items {
+    width: 1120px;
+    margin-top: 15px;
+}
+
+.item1 {
+    margin-top: 20px;
+}
+
+.t-op-nextlvl {
+    font-size: 14px;
+    letter-spacing: 0px;
+    font-weight: 600;
+}
+
+.label-tag-green {
+    width: 100px;
+    text-align: center;
+    background-color: rgb(24, 198, 24);
+    color: white;
+    border-radius: 4px;
+}
+
+.label-tag-blue {
+    width: 100px;
+    text-align: center;
+    background-color: rgb(8, 147, 222);
+    color: white;
+    border-radius: 4px;
+}
+
+.label-tag-red {
+    width: 100px;
+    text-align: center;
+    background-color: rgb(234, 34, 74);
+    color: white;
+    border-radius: 4px;
+}
+
+/* server page css */
+.server-box {
+    height: 450px;
+    width: 450px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 3px 3px 10px rgb(182, 180, 179);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.server-box .server-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid rgb(248, 139, 30);
+}
+
+.server-title h2{
+    color: rgb(248, 139, 30);
+    font-size: 37px;
+}
+
+.server-box .server-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+    width: 100%;
+}
+
+.server-box .content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.server-box i {
+    color: rgb(248, 139, 30);
+    font-size: 100px;
+}
+
+.server-box:hover{
+    transform: scale(1.08); 
+}
+
+.server-box .text{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 12px;
+    font-weight: 200;
+    width: 100%;
+    gap: 13px;
+    /* color: rgb(248, 139, 30); */
+    color: black;
+}
+
+.view-report{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+.view-report i{
+    font-size: 30px;
+    color: white;
+}
+
+.view-report button {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 150px;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    padding: 5px 18px;
+    border-radius: 15px;
+    border-style: none;
+    background-color: rgb(248, 139, 30);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.view-report button:hover {
+    background-color: rgb(244, 158, 20);
+    transform: scale(1.05);
+    transition: all 0.5s ease;
+}
+
+.view-report button:active {
+    background-color: rgb(251, 190, 92);
+    transform: scale(1);
+    transition: all 0.01s ease;
+}
+
+.left{
+    text-align: left;
+}
+
+.right{
+    text-align: right;
+}
+
+/* report page css */
+
+.reportPage-container {
+    max-height: 80vh;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #ffffff;
+    border-radius: 30px;
+    box-shadow: 3px 3px 10px rgb(188, 188, 188);
+    padding: 0px 20px 20px 20px;
+    overflow-y: scroll;
+}
+
+.reportPage-container::-webkit-scrollbar {
+    display: none;
+}
+
+#map {
+    height: 60vh;
+    width: 100%;
+  }
+
+.navigate-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 10px;
+    font-weight: 400;
+    color: white;
+    margin: 5px;
+    padding: 5px 18px;
+    border-radius: 15px;
+    border-style: none;
+    background-color: 	rgba(66, 133, 244);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+} 

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Map Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="main.css">
+
+    <!-- Boxicons CSS Link -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+
+<body>
+    <header>
+        <div class="logo">
+            <div class="icn menuicn" id="menuicn" alt="menu-icon">
+                <i class='bx bx-menu' id='menuicn'></i>
+            </div>
+            <div class="logoName">Test</div>
+        </div>
+    </header>
+
+
+    <div class="main-container">
+        <div class="navcontainer">
+            <nav class="nav">
+                <div class="nav-upper-options">
+                    <a href="newTest.html">
+                        <div class="nav-option option1">
+                            <i class='bx bxs-dashboard'></i>
+                            <h3>Dashboard</h3>
+                        </div>
+                    </a>
+
+                    <a href="newReport.html">
+                        <div class="nav-option">
+                            <i class='bx bxs-report'></i>
+                            <h3>Report</h3>
+                        </div>
+                    </a>
+
+                    <a href="http://www.google.com">
+                        <div class="nav-option">
+                            <i class='bx bx-log-out'></i>
+                            <h3>Logout</h3>
+                        </div>
+                    </a>
+                </div>
+            </nav>
+        </div>
+
+        <div class="main">
+            <div class="report-container">
+                <div class="report-header">
+                    <h1 class="temperature-Reading">Map</h1>
+                </div>
+
+                <div class="report-body">
+                    <div id="map"></div>
+
+                    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+                </div>
+            </div>
+
+
+            <div class="report-container">
+                <div class="report-header">
+                    <h1 class="temperature-Reading">Recent RTU Reading</h1>
+                </div>
+
+                <div class="report-body">
+                    <div class="report-table">
+                        <table>
+                            <tr>
+                                <th>RTU Host</th>
+                                <th>Reading 1</th>
+                                <th>Reading 2</th>
+                                <th>Reading 3</th>
+                                <th>Summary</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td>10.6.8.162</td>
+                                <td class="blue">Too cold</td>
+                                <td class="green">Okay</td>
+                                <td class="red">Too Hot</td>
+                                <td>Need to contact....for further action</td>
+                                <td>
+                                    <a href="newReport.html">
+                                        <div class="dashboard-view-report">
+                                            <button type="submit" name="search">
+                                                View Report
+                                                <i class='bx bx-search-alt-2'></i>
+                                            </button>
+                                        </div>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10.6.8.163</td>
+                                <td class="blue">Too cold</td>
+                                <td class="green">Okay</td>
+                                <td class="red">Too Hot</td>
+                                <td>Need to contact....for further action</td>
+                                <td>
+                                    <a href="newReport.html">
+                                        <div class="dashboard-view-report">
+                                            <button type="submit" name="search">
+                                                View Report
+                                                <i class='bx bx-search-alt-2'></i>
+                                            </button>
+                                        </div>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10.6.8.164</td>
+                                <td class="blue">Too cold</td>
+                                <td class="green">Okay</td>
+                                <td class="red">Too Hot</td>
+                                <td>Need to contact....for further action</td>
+                                <td>
+                                    <a href="newReport.html">
+                                        <div class="dashboard-view-report">
+                                            <button type="submit" name="search">
+                                                View Report
+                                                <i class='bx bx-search-alt-2'></i>
+                                            </button>
+                                        </div>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10.6.8.165</td>
+                                <td class="blue">Too cold</td>
+                                <td class="green">Okay</td>
+                                <td class="red">Too Hot</td>
+                                <td>Need to contact....for further action</td>
+                                <td>
+                                    <a href="newReport.html">
+                                        <div class="dashboard-view-report">
+                                            <button type="submit" name="search">
+                                                View Report
+                                                <i class='bx bx-search-alt-2'></i>
+                                            </button>
+                                        </div>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+
+    // Initialize the map
+    const map = L.map('map').setView([4.2105, 101.9758], 6); // Centered at Malaysia
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Location data
+    const locations = [
+        { name: "Cyberjaya Lake Gardens", lat: 2.9297, lng: 101.6699 },
+        { name: "Multimedia University (MMU)", lat: 2.9286, lng: 101.6429 },
+        { name: "Shaftsbury Square", lat: 2.9244, lng: 101.6537 },
+        { name: "Dpulze Shopping Centre", lat: 2.9225, lng: 101.6551 },
+        { name: "Limkokwing University", lat: 2.9220, lng: 101.6376 },
+        { name: "Putrajaya Lake", lat: 2.9431, lng: 101.7043 },
+        { name: "Petronas Twin Towers", lat: 3.1579, lng: 101.7123 },
+        { name: "George Town", lat: 5.4142, lng: 100.3295 }
+    ];
+
+    // Add markers and click functionality
+    locations.forEach(location => {
+        const marker = L.marker([location.lat, location.lng]).addTo(map);
+
+        // Add a popup with navigation buttons
+        marker.bindPopup(`
+        <b>${location.name}</b><br>
+        Lattitude: ${location.lat}<br> 
+        Longitude: ${location.lng}<br>
+        <button class="navigate-button" onclick="navigate(${location.lat}, ${location.lng}, 'google')">Google Maps</button>
+        <button class="navigate-button" onclick="navigate(${location.lat}, ${location.lng}, 'waze')">Waze</button>
+        `);
+    });
+
+    // Function to handle navigation
+    function navigate(lat, lng, platform) {
+        if (platform === 'google') {
+            window.open(`https://www.google.com/maps?q=${lat},${lng}`, '_blank');
+        } else if (platform === 'waze') {
+            window.location.href = `https://waze.com/ul?ll=${lat},${lng}&navigate=yes`;
+        }
+    }
+
+    let menuicn = document.querySelector(".menuicn");
+    let nav = document.querySelector(".navcontainer");
+
+    menuicn.addEventListener("click", () => {
+        nav.classList.toggle("navclose");
+    })
+</script>
+
+</html>
