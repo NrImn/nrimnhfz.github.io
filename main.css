@@ -642,7 +642,7 @@ header {
 
     /* Report container adjustments */
     #map {
-        height: 230px;
+        height: 340px;
         width: 100%;
     }
 
@@ -655,7 +655,7 @@ header {
 
     .report-container {
         max-width: 100vw;
-        height: 40vh;
+        height: 60vh;
         margin: 10px auto;
     }
 
