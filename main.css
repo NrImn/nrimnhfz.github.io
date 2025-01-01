@@ -144,7 +144,7 @@ header {
 }
 
 .nav {
-    min-height: 91vh;
+    min-height: 100vh;
     width: 250px;
     background-color: white;
     position: absolute;
@@ -159,7 +159,7 @@ header {
 }
 
 .navcontainer {
-    height: calc(100vh - 70px);
+    height: 100vh;
     width: 250px;
     position: relative;
     overflow-y: scroll;
@@ -580,3 +580,105 @@ header {
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 } 
+
+
+
+/* Responsive Design for Mobile Devices */
+@media screen and (max-width: 768px) {
+    /* Adjust the header */
+    header {
+        height: 50px;
+        padding: 0 20px;
+    }
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        position: relative;
+        top: 50px;
+        z-index: 1;
+    }
+
+    .logoName {
+        font-size: 15px;
+    }
+
+    .menuicn {
+        font-size: 30px;
+    }
+
+    /* Navigation bar */
+    .nav {
+    min-height: fit-content;
+    width: 100vw;
+    padding: 10px 0 0 0;
+    }
+
+    .navcontainer {
+        height: 120px;
+        width: 100vw;
+    }
+
+    .nav-upper-options {
+        gap: 10px;
+    }
+
+    .nav-option {
+        width: 100vw;
+        height: 30px;
+        font-size: 10px;
+        padding: 0 45px 0 25px;
+        gap: 5px;
+    }
+
+    .nav i {
+        font-size: 20px;
+    }
+
+    .navclose {
+        height: 0px;
+    }
+
+    /* Report container adjustments */
+    #map {
+        height: 230px;
+        width: 100%;
+    }
+
+    .main {
+        width: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        padding: 0 15px 10px 10px;
+    }
+
+    .report-container {
+        max-width: 100vw;
+        height: 40vh;
+        margin: 10px auto;
+    }
+
+    .report-header {
+        height: 45px;
+        display: flex;
+        align-items: center;
+        padding: 10px 20px 5px 20px;
+        border-bottom: 2px solid rgb(255, 195, 135);
+    }
+
+    /* header text */
+    .temperature-Reading { 
+        font-size: 20px;
+        font-weight: 700;
+        color: rgb(248, 151, 54);
+    }
+
+    .report-body {
+        padding: 5px 5px 0 5px;
+    }
+
+    .report-table table {
+        width: 100%;
+    }
+}
