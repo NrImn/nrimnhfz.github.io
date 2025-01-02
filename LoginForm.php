@@ -137,7 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
 
     // Database connection
-    $conn = new mysqli('localhost', 'root', '5751', 'manhole_db'); // Update with your database name
+    $conn = new mysqli('localhost', 'root', '5751', 'manhole_db');
 
     if ($conn->connect_error) {
         die('Connection failed: ' . $conn->connect_error);
