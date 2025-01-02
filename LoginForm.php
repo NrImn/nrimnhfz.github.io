@@ -109,8 +109,8 @@
 
 <body>
     <div class="form-container">
-        <h2>Login</h2>
-        <form action="login.php" method="POST">
+        <h2>Manhole Inventory System Login</h2>
+        <form action="LoginForm.php" method="POST">
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
