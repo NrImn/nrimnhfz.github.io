@@ -169,7 +169,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     } else {
         // Login failed
-        echo "<script>alert('Invalid email or password. Please try again.'); window.location.href = 'login.html';</script>";
+        echo "<script>alert('Invalid email or password. Please try again.'); window.location.href = 'LoginForm.php';</script>";
     }
 
     $stmt->close();
