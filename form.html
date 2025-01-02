@@ -246,15 +246,13 @@
             }
         }
 
-        function openModal() {
-            document.getElementById('modal').style.display = 'flex';
-        }
-
-        function closeModal() {
-            document.getElementById('modal').style.display = 'none';
-        }
-
         function getLocation() {
+            const locationButton = document.querySelector('.location-btn');
+
+            // Change button text to indicate loading
+            locationButton.textContent = 'Fetching your location...';
+            locationButton.disabled = true; // Disable the button to prevent multiple clicks
+
             // Check if the user is on a mobile device
             const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 
@@ -272,14 +270,32 @@
                     document.getElementById('longitude').value = lng;
 
                     initMap(lat, lng);
+
+                    // Change button text to indicate the loading is done
+                    locationButton.textContent = 'Get Location';
+                    locationButton.disabled = false;
+
                 }, (error) => {
                     alert('Unable to retrieve location. Please try again.');
+                    // Change button text to indicate the loading is done
+                    locationButton.textContent = 'Get Location';
+                    locationButton.disabled = false;
                 });
             } else {
                 alert('Geolocation is not supported by this browser.');
+                // Change button text to indicate the loading is done
+                locationButton.textContent = 'Get Location';
+                locationButton.disabled = false;
             }
         }
 
+        function openModal() {
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
 
         const form = document.getElementById('inputForm');
         form.addEventListener('submit', (e) => {
