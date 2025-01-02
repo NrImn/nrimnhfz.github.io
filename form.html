@@ -176,7 +176,7 @@
 </head>
 
 <body>
-    <a href="admin.html">Next Page</a>
+    <a href="main.html">Next Page</a>
 
     <div id="modal" class="modal">
         <div class="modal-content">
@@ -199,12 +199,12 @@
 
             <div class="form-group">
                 <label for="latitude">Latitude:</label>
-                <input type="text" id="latitude" name="latitude" placeholder="Latitude" readonly>
+                <input type="text" id="latitude" name="latitude" placeholder="Latitude" required>
             </div>
 
             <div class="form-group">
                 <label for="longitude">Longitude:</label>
-                <input type="text" id="longitude" name="longitude" placeholder="Longitude" readonly>
+                <input type="text" id="longitude" name="longitude" placeholder="Longitude" required>
             </div>
 
             <div id="map"></div>
@@ -231,7 +231,15 @@
                     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 }).addTo(map);
 
-                marker = L.marker([lat, lng]).addTo(map);
+                marker = L.marker([lat, lng], { draggable: true }).addTo(map);
+
+                // Update latitude and longitude fields when marker is dragged
+                marker.on('dragend', (e) => {
+                    const position = marker.getLatLng();
+                    document.getElementById('latitude').value = position.lat;
+                    document.getElementById('longitude').value = position.lng;
+                });
+
             } else {
                 map.setView([lat, lng], 15);
                 marker.setLatLng([lat, lng]);

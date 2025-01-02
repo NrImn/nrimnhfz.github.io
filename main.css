@@ -1,684 +1,560 @@
 /* google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-a{
-    text-decoration: none;
-    color: black;
+a {
+  text-decoration: none;
+  color: black;
 }
 
 body {
-    background-color: rgb(227, 213, 200);
-    max-width: 100%;
-    overflow-x: hidden;
+  background-color: rgb(227, 213, 200);
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 header {
-    height: 70px;
-    width: 100vw;
-    padding: 0 30px;
-    background-color: white;
-    position: fixed;
-    z-index: 100;
-    box-shadow: 1px 1px 15px #f5dec7;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  height: 70px;
+  width: 100vw;
+  padding: 0 30px;
+  background-color: white;
+  position: fixed;
+  z-index: 100;
+  box-shadow: 1px 1px 15px #f5dec7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logoName {
-    font-family: 'Hanken Grostesk', sans-serif;
-    font-size: 27px;
-    font-weight: 900;
-    color: black;
+  font-family: "Hanken Grostesk", sans-serif;
+  font-size: 27px;
+  font-weight: 900;
+  color: black;
 }
 
 .icn {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .menuicn {
-    font-size: 50px;
-    cursor: pointer;
+  font-size: 50px;
+  cursor: pointer;
 }
 
 .logo,
 .search,
 .searchBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo {
-    gap: 20px;
+  gap: 20px;
 }
 
 .search {
-    gap: 20px;
+  gap: 20px;
 }
 
 .search i {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .search select,
 .search input {
-    width: 180px;
-    height: 42px;
-    border-radius: 15px;
-    background-color: whitesmoke;
-    padding: 0 20px;
-    font-size: 15px;
-    outline: none;
-    border: none;
+  width: 180px;
+  height: 42px;
+  border-radius: 15px;
+  background-color: whitesmoke;
+  padding: 0 20px;
+  font-size: 15px;
+  outline: none;
+  border: none;
 }
 
 .dropdownSearch,
 .startDateSearch,
 .endDateSearch {
-    display: flex;
-    align-items: center;
-    width: 300px;
-    gap: 6px;
+  display: flex;
+  align-items: center;
+  width: 300px;
+  gap: 6px;
 }
 
 .dropdownSearch label,
 .startDateSearch label,
 .endDateSearch label {
-    display: flex;
-    align-items: center;
-    font-size: 17px;
-    font-weight: 500;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 500;
 }
 
 .searchBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .searchBtn button {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 115px;
-    font-size: 15px;
-    padding: 5px 18px;
-    border-radius: 15px;
-    border-style: none;
-    color: white;
-    background-color: rgb(248, 139, 30);
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 115px;
+  font-size: 15px;
+  padding: 5px 18px;
+  border-radius: 15px;
+  border-style: none;
+  color: white;
+  background-color: rgb(248, 139, 30);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .searchBtn button:hover {
-    background-color: rgb(251, 190, 92);
-    transform: scale(1.05);
-    transition: all 0.5s ease;
+  background-color: rgb(251, 190, 92);
+  transform: scale(1.05);
+  transition: all 0.5s ease;
 }
 
 .searchBtn button:active {
-    background-color: rgb(251, 190, 92);
-    transform: scale(1);
-    transition: all 0.01s ease;
+  background-color: rgb(251, 190, 92);
+  transform: scale(1);
+  transition: all 0.01s ease;
 }
 
 .main-container {
-    display: flex;
-    width: 100vw;
-    position: relative;
-    top: 70px;
-    z-index: 1;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  padding-top: 70px;
+  z-index: 1;
 }
 
 .nav {
-    min-height: 100vh;
-    width: 250px;
-    background-color: white;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    box-shadow: 1px 1px 10px rgb(251, 190, 92);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
-    padding: 30px 0 20px 10px;
+  min-height: 100vh;
+  width: 250px;
+  background-color: white;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 30px 0 20px 10px;
 }
 
 .navcontainer {
-    height: 100vh;
-    width: 250px;
-    position: relative;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    transition: all 0.5s ease-in-out;
+  max-height: 100vh;
+  width: 250px;
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: all 0.5s ease-in-out;
 }
 
 .navclose {
-    width: 80px;
+  width: 80px;
 }
 
 .navcontainer::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .nav-option {
-    display: flex;
-    align-items: center;
-    width: 250px;
-    height: 60px;
-    padding: 0 30px 0 20px;
-    gap: 20px;
-    transition: all 0.1s ease-in-out;
+  display: flex;
+  align-items: center;
+  width: 250px;
+  height: 60px;
+  padding: 0 30px 0 20px;
+  gap: 20px;
+  transition: all 0.1s ease-in-out;
 }
 
 .nav-option:hover {
-    background-color: whitesmoke;
-    cursor: pointer;
+  background-color: whitesmoke;
+  cursor: pointer;
 }
 
 .nav i {
-    font-size: 33px;
+  font-size: 33px;
 }
 
 .nav-upper-options {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 }
 
 .option1 {
-    background-color: rgb(248, 139, 30);
-    color: white;
-    cursor: pointer;
+  background-color: rgb(248, 139, 30);
+  color: white;
+  cursor: pointer;
 }
 
 .option1:hover {
-    background-color: rgb(250, 164, 78);
+  background-color: rgb(250, 164, 78);
 }
 
 .main {
-    height: calc(100vh - 70px);
-    width: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    padding: 0 30px 30px 30px;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 0 30px 30px 30px;
 }
 
 .main::-webkit-scrollbar {
-    width: 5px;
+  width: 5px;
 }
 
 .main::-webkit-scrollbar-track {
-    background-color: #9e9e9eb2;
+  background-color: #9e9e9eb2;
 }
 
 .box-container {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px;
 }
 
 .box {
-    height: 130px;
-    width: 230px;
-    border-radius: 20px;
-    background-color: rgb(248, 139, 30);
-    box-shadow: 3px 3px 10px rgb(255, 182, 110);
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
+  height: 130px;
+  width: 230px;
+  border-radius: 20px;
+  background-color: rgb(248, 139, 30);
+  box-shadow: 3px 3px 10px rgb(255, 182, 110);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
 }
 
 .box:hover {
-    transform: scale(1.08);
+  transform: scale(1.08);
 }
 
 .box i {
-    color: white;
-    font-size: 50px;
+  color: white;
+  font-size: 50px;
 }
 
 .box .text {
-    color: white;
+  color: white;
 }
 
 .report-container {
-    min-height: 300px;
-    max-height: 80vh;
-    max-width: 1200px;
-    margin: 33px auto 0px auto;
-    background-color: #ffffff;
-    border-radius: 30px;
-    box-shadow: 3px 3px 10px rgb(188, 188, 188);
-    padding: 0 20px 20px 20px;
-    overflow-y: scroll;
+  min-height: 300px;
+  max-height: 80vh;
+  max-width: 1200px;
+  margin: 33px auto 0px auto;
+  background-color: #ffffff;
+  border-radius: 30px;
+  box-shadow: 3px 3px 10px rgb(188, 188, 188);
+  padding: 0 20px 20px 20px;
+  overflow-y: scroll;
 }
 
 .report-header {
-    height: 80px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 20px 20px 10px 20px;
-    border-bottom: 2px solid rgb(255, 195, 135);
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20px 20px 10px 20px;
+  border-bottom: 2px solid rgb(255, 195, 135);
 }
 
+/* header for report container */
 .temperature-Reading {
-    font-size: 30px;
-    font-weight: 700;
-    color: rgb(248, 151, 54);
+  font-size: 30px;
+  font-weight: 700;
+  color: rgb(248, 151, 54);
 }
 
 .report-body {
-    max-width: 1160px;
-    overflow-x: auto;
-    padding: 20px;
+  max-width: 1160px;
+  overflow-x: auto;
+  padding: 20px;
 }
 
-.report-table table{
-    table-layout: auto;
-    text-align: center;
-    width: 1120px;
-    border: 1px solid #dededf;
-    border-collapse: collapse;
-    border-spacing: 1px;
+.report-table table {
+  table-layout: auto;
+  text-align: center;
+  width: 1100px;
+  border: 1px solid #dededf;
+  border-collapse: collapse;
+  border-spacing: 1px;
 }
 
-.report-table th{
-    height: 35px;
-    border: 2px solid #dededf;
-    background-color: rgb(229, 226, 226);
+.report-table th {
+  height: 35px;
+  padding: 5px;
+  border: 2px solid #dededf;
+  background-color: rgb(229, 226, 226);
 }
 
-.report-table td{
-    font-size: 15px;
-    font-weight: 500;
-    height: 40px;
-    border: 1px solid #dededf;
+.report-table td {
+  min-height: fit-content;
+  font-size: 15px;
+  font-weight: 500;
+  height: 40px;
+  border: 1px solid #dededf;
 }
 
-.report-table td.green{
-    background-color: rgb(35, 223, 63);
-    color: white;
+.report-body .action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
 }
 
-.report-table td.red{
-    background-color: rgb(247, 86, 86);
-    color: white;
+.report-body .update-button {
+  width: 100px;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  padding: 5px 18px;
+  border-radius: 15px;
+  border-style: none;
+  background-color: rgba(66, 133, 244);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
-.report-table td.blue{
-    background-color: rgb(49, 153, 238);
-    color: white;
+.report-body .delete-button {
+  width: 100px;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  padding: 5px 18px;
+  border-radius: 15px;
+  border-style: none;
+  background-color: rgb(234, 17, 35);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .report-container::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
-.report-container .dashboard-view-report{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.report-container .dashboard-view-report {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.report-container .dashboard-view-report button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 150px;
-    height: 24px;
-    font-size: 14px;
-    font-weight: 400;
-    color: white;
-    padding: 5px 18px;
-    border-radius: 15px;
-    border-style: none;
-    background-color: rgb(248, 139, 30);
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
+.report-container .dashboard-view-report button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 24px;
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
+  padding: 5px 18px;
+  border-radius: 15px;
+  border-style: none;
+  background-color: rgb(248, 139, 30);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
-.dashboard-view-report button:hover{
-    background-color: rgb(248, 168, 88);
-    transition: transform 0.3s ease-in-out;
-    transform: scale(1.1);
+.dashboard-view-report button:hover {
+  background-color: rgb(248, 168, 88);
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1.1);
 }
 
-.dashboard-view-report button:active{
-    background-color: rgb(251, 162, 72);
-    transition: transform 0.1s ease-in-out;
-    transform: scale(1.05);
-}
-
-
-
-.report-topic-heading,
-.item1 {
-    width: 1120px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.t-op {
-    font-size: 18px;
-    letter-spacing: 0px;
-}
-
-.items {
-    width: 1120px;
-    margin-top: 15px;
-}
-
-.item1 {
-    margin-top: 20px;
-}
-
-.t-op-nextlvl {
-    font-size: 14px;
-    letter-spacing: 0px;
-    font-weight: 600;
-}
-
-.label-tag-green {
-    width: 100px;
-    text-align: center;
-    background-color: rgb(24, 198, 24);
-    color: white;
-    border-radius: 4px;
-}
-
-.label-tag-blue {
-    width: 100px;
-    text-align: center;
-    background-color: rgb(8, 147, 222);
-    color: white;
-    border-radius: 4px;
-}
-
-.label-tag-red {
-    width: 100px;
-    text-align: center;
-    background-color: rgb(234, 34, 74);
-    color: white;
-    border-radius: 4px;
-}
-
-/* server page css */
-.server-box {
-    height: 450px;
-    width: 450px;
-    border-radius: 20px;
-    background-color: white;
-    box-shadow: 3px 3px 10px rgb(182, 180, 179);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-}
-
-.server-box .server-title{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    border-bottom: 3px solid rgb(248, 139, 30);
-}
-
-.server-title h2{
-    color: rgb(248, 139, 30);
-    font-size: 37px;
-}
-
-.server-box .server-content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    cursor: pointer;
-    width: 100%;
-}
-
-.server-box .content{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.server-box i {
-    color: rgb(248, 139, 30);
-    font-size: 100px;
-}
-
-.server-box:hover{
-    transform: scale(1.08); 
-}
-
-.server-box .text{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    font-size: 12px;
-    font-weight: 200;
-    width: 100%;
-    gap: 13px;
-    /* color: rgb(248, 139, 30); */
-    color: black;
-}
-
-.view-report{
-    display: flex;
-    align-items: end;
-    justify-content: end;
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
-}
-
-.view-report i{
-    font-size: 30px;
-    color: white;
-}
-
-.view-report button {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 150px;
-    font-size: 15px;
-    font-weight: 600;
-    color: white;
-    padding: 5px 18px;
-    border-radius: 15px;
-    border-style: none;
-    background-color: rgb(248, 139, 30);
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-}
-
-.view-report button:hover {
-    background-color: rgb(244, 158, 20);
-    transform: scale(1.05);
-    transition: all 0.5s ease;
-}
-
-.view-report button:active {
-    background-color: rgb(251, 190, 92);
-    transform: scale(1);
-    transition: all 0.01s ease;
-}
-
-.left{
-    text-align: left;
-}
-
-.right{
-    text-align: right;
-}
-
-/* report page css */
-
-.reportPage-container {
-    max-height: 80vh;
-    max-width: 1200px;
-    margin: auto;
-    background-color: #ffffff;
-    border-radius: 30px;
-    box-shadow: 3px 3px 10px rgb(188, 188, 188);
-    padding: 0px 20px 20px 20px;
-    overflow-y: scroll;
-}
-
-.reportPage-container::-webkit-scrollbar {
-    display: none;
+.dashboard-view-report button:active {
+  background-color: rgb(251, 162, 72);
+  transition: transform 0.1s ease-in-out;
+  transform: scale(1.05);
 }
 
 #map {
-    height: 60vh;
-    width: 100%;
-  }
+  height: 60vh;
+  width: 100%;
+}
 
 .navigate-button {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    font-size: 10px;
-    font-weight: 400;
-    color: white;
-    margin: 5px;
-    padding: 5px 18px;
-    border-radius: 15px;
-    border-style: none;
-    background-color: 	rgba(66, 133, 244);
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-} 
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  font-size: 10px;
+  font-weight: 400;
+  color: white;
+  margin: 5px;
+  padding: 5px 18px;
+  border-radius: 15px;
+  border-style: none;
+  background-color: rgba(66, 133, 244);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
 
+#viewInfo-button {
+  background-color: grey;
+}
 
+.highlight {
+  background-color: grey;
+}
 
 /* Responsive Design for Mobile Devices */
 @media screen and (max-width: 768px) {
-    /* Adjust the header */
-    header {
-        height: 50px;
-        padding: 0 20px;
-    }
+  /* Adjust the header */
+  header {
+    height: 50px;
+    padding: 0 20px;
+    box-shadow: 1px 1px 1px #f5dec7;
+  }
 
-    .main-container {
-        display: flex;
-        flex-direction: column;
-        width: 100vw;
-        position: relative;
-        top: 50px;
-        z-index: 1;
-    }
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    padding-top: 50px;
+    z-index: 1;
+  }
 
-    .logoName {
-        font-size: 15px;
-    }
+  .logoName {
+    font-size: 15px;
+  }
 
-    .menuicn {
-        font-size: 30px;
-    }
+  .menuicn {
+    font-size: 30px;
+  }
 
-    /* Navigation bar */
-    .nav {
+  /* Navigation bar */
+  .nav {
     min-height: fit-content;
     width: 100vw;
-    padding: 10px 0 0 0;
-    }
+    padding: 0 0 0 0;
+  }
 
-    .navcontainer {
-        height: 120px;
-        width: 100vw;
-    }
+  .navcontainer {
+    height: 80px;
+    width: 100vw;
+    opacity: 100%;
+    scrollbar-width: thin;
+  }
 
-    .nav-upper-options {
-        gap: 10px;
-    }
+  .nav-upper-options {
+    gap: 4px;
+  }
 
-    .nav-option {
-        width: 100vw;
-        height: 30px;
-        font-size: 10px;
-        padding: 0 45px 0 25px;
-        gap: 5px;
-    }
+  .nav-option {
+    width: 100vw;
+    height: 30px;
+    font-size: 10px;
+    padding: 0 45px 0 25px;
+    gap: 5px;
+  }
 
-    .nav i {
-        font-size: 20px;
-    }
+  .nav i {
+    font-size: 20px;
+  }
 
-    .navclose {
-        height: 0px;
-    }
+  .navclose {
+    height: 0px;
+  }
 
-    /* Report container adjustments */
-    #map {
-        height: 375px;
-        width: 100%;
-    }
+  /* Report container adjustments */
+  #map {
+    height: 375px;
+    width: 100%;
+  }
 
-    .main {
-        width: 100%;
-        overflow-y: scroll;
-        overflow-x: hidden;
-        padding: 0 15px 10px 10px;
-    }
+  .main {
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0 15px 10px 10px;
+  }
 
-    .report-container {
-        max-width: 100vw;
-        height: 440px;
-        margin: 10px auto;
-    }
+  .report-container {
+    max-width: 100vw;
+    min-height: fit-content;
+    margin: 10px auto;
+  }
 
-    .report-header {
-        height: 45px;
-        display: flex;
-        align-items: center;
-        padding: 10px 20px 5px 20px;
-        border-bottom: 2px solid rgb(255, 195, 135);
-    }
+  .report-header {
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px 5px 20px;
+    border-bottom: 2px solid rgb(255, 195, 135);
+  }
 
-    /* header text */
-    .temperature-Reading { 
-        font-size: 20px;
-        font-weight: 700;
-        color: rgb(248, 151, 54);
-    }
+  /* header text */
+  .temperature-Reading {
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(248, 151, 54);
+  }
 
-    .report-body {
-        padding: 5px 5px 0 5px;
-    }
+  .report-body {
+    padding: 5px 5px 0 5px;
+  }
 
-    .report-table table {
-        width: 100%;
-    }
+  .report-table table {
+    width: 100%;
+  }
+
+  .report-body th {
+    font-size: 12px;
+  }
+
+  .report-body td {
+    font-size: 10px;
+    font-weight: 500;
+  }
+
+  .report-body .action-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+    padding: 5px;
+  }
+
+  .report-body .update-button {
+    width: 60px;
+    font-size: 9px;
+    font-weight: 500;
+    padding: 5px 5px;
+  }
+
+  .report-body .delete-button {
+    width: 60px;
+    font-size: 9px;
+    font-weight: 500;
+    padding: 5px 5px;
+  }
 }

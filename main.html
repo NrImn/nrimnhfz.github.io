@@ -38,10 +38,17 @@
                         </div>
                     </a>
 
-                    <a href="">
+                    <a href="form.html">
                         <div class="nav-option">
-                            <i class='bx bxs-report'></i>
-                            <h3>Report</h3>
+                            <i class='bx bx-log-out'></i>
+                            <h3>Form</h3>
+                        </div>
+                    </a>
+
+                    <a href="http://www.google.com">
+                        <div class="nav-option">
+                            <i class='bx bx-log-out'></i>
+                            <h3>Logout</h3>
                         </div>
                     </a>
 
@@ -58,7 +65,7 @@
         <div class="main">
             <div class="report-container">
                 <div class="report-header">
-                    <h1 class="temperature-Reading">Map</h1>
+                    <h1 class="temperature-Reading">Manhole Location Map</h1>
                 </div>
 
                 <div class="report-body">
@@ -71,88 +78,24 @@
 
             <div class="report-container">
                 <div class="report-header">
-                    <h1 class="temperature-Reading">Recent RTU Reading</h1>
+                    <h1 class="temperature-Reading">Manhole Location Table</h1>
                 </div>
 
                 <div class="report-body">
                     <div class="report-table">
                         <table>
-                            <tr>
-                                <th>RTU Host</th>
-                                <th>Reading 1</th>
-                                <th>Reading 2</th>
-                                <th>Reading 3</th>
-                                <th>Summary</th>
-                                <th></th>
-                            </tr>
-                            <tr>
-                                <td>10.6.8.162</td>
-                                <td class="blue">Too cold</td>
-                                <td class="green">Okay</td>
-                                <td class="red">Too Hot</td>
-                                <td>Need to contact....for further action</td>
-                                <td>
-                                    <a href="newReport.html">
-                                        <div class="dashboard-view-report">
-                                            <button type="submit" name="search">
-                                                View Report
-                                                <i class='bx bx-search-alt-2'></i>
-                                            </button>
-                                        </div>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>10.6.8.163</td>
-                                <td class="blue">Too cold</td>
-                                <td class="green">Okay</td>
-                                <td class="red">Too Hot</td>
-                                <td>Need to contact....for further action</td>
-                                <td>
-                                    <a href="newReport.html">
-                                        <div class="dashboard-view-report">
-                                            <button type="submit" name="search">
-                                                View Report
-                                                <i class='bx bx-search-alt-2'></i>
-                                            </button>
-                                        </div>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>10.6.8.164</td>
-                                <td class="blue">Too cold</td>
-                                <td class="green">Okay</td>
-                                <td class="red">Too Hot</td>
-                                <td>Need to contact....for further action</td>
-                                <td>
-                                    <a href="newReport.html">
-                                        <div class="dashboard-view-report">
-                                            <button type="submit" name="search">
-                                                View Report
-                                                <i class='bx bx-search-alt-2'></i>
-                                            </button>
-                                        </div>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>10.6.8.165</td>
-                                <td class="blue">Too cold</td>
-                                <td class="green">Okay</td>
-                                <td class="red">Too Hot</td>
-                                <td>Need to contact....for further action</td>
-                                <td>
-                                    <a href="newReport.html">
-                                        <div class="dashboard-view-report">
-                                            <button type="submit" name="search">
-                                                View Report
-                                                <i class='bx bx-search-alt-2'></i>
-                                            </button>
-                                        </div>
-                                    </a>
-                                </td>
-                            </tr>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Latitude</th>
+                                    <th>Longitude</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body">
+                                <!-- Rows will be inserted using a js function -->
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -184,19 +127,38 @@
         { name: "George Town", lat: 5.4142, lng: 100.3295 }
     ];
 
+    // Populate the table from the locations array
+    const tableBody = document.getElementById("table-body");
+
+    locations.forEach((location, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+        <td>${index + 1}</td>
+        <td>${location.name}</td>
+        <td>${location.lat}</td>
+        <td>${location.lng}</td>
+        <td class="action-button">
+            <button class="update-button" onclick="highlightTableRow(${index})">Update</button>
+            <button class="delete-button" onclick="highlightTableRow(${index})">Delete</button>
+        </td>
+    `;
+        tableBody.appendChild(row);
+    });
+
     // Add markers and click functionality
-    locations.forEach(location => {
+    locations.forEach((location, index) => {
         const marker = L.marker([location.lat, location.lng]).addTo(map);
 
-        // Add a popup with navigation buttons
+        // Add a popup with buttons
         marker.bindPopup(`
         <b>${location.name}</b><br>
         Lattitude: ${location.lat}<br> 
         Longitude: ${location.lng}<br>
         <button class="navigate-button" onclick="navigate(${location.lat}, ${location.lng}, 'google')">Google Maps</button>
         <button class="navigate-button" onclick="navigate(${location.lat}, ${location.lng}, 'waze')">Waze</button>
+        <button class="navigate-button" id="viewInfo-button" onclick="highlightTableRow(${index})">View Info</button>
         `);
-    });
+    })
 
     // Function to handle navigation
     function navigate(lat, lng, platform) {
@@ -207,12 +169,30 @@
         }
     }
 
+    // Highlight and scroll to the table row
+    const highlightTableRow = (rowIndex) => {
+        const rows = document.querySelectorAll('tbody tr');
+
+        // Remove existing highlights
+        rows.forEach(row => row.classList.remove('highlight'));
+
+        // Highlight the target row
+        const targetRow = rows[rowIndex];
+        targetRow.classList.add('highlight');
+
+        // Scroll to the highlighted row smoothly
+        targetRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+
+    //open and close sidebar
     let menuicn = document.querySelector(".menuicn");
     let nav = document.querySelector(".navcontainer");
 
     menuicn.addEventListener("click", () => {
         nav.classList.toggle("navclose");
     })
+
 </script>
 
 </html>
